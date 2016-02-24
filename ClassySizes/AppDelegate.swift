@@ -9,14 +9,27 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate
+{
     var window: UIWindow?
 
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds);
-        window?.rootViewController = CSViewController()
+
+        let textController = CSTextViewController()
+        textController.tabBarItem.title = "Text"
+
+        let layoutController = CSLayoutViewController()
+        layoutController.tabBarItem.title = "Layout"
+
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [
+            textController,
+            layoutController,
+        ]
+
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
         return true

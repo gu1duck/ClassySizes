@@ -1,5 +1,5 @@
 //
-//  CSViewController.swift
+//  CSTextViewController.swift
 //  ClassySizes
 //
 //  Created by Jeremy Petter on 2016-02-09.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CSViewController: UIViewController
+class CSTextViewController: UIViewController
 {
     override func viewDidLoad()
     {
@@ -19,7 +19,7 @@ class CSViewController: UIViewController
 
         self.view.backgroundColor = UIColor.purpleColor()
 
-        let margins = view.layoutMarginsGuide
+        let margins = self.view.layoutMarginsGuide
         self.horizontalLabel.leadingAnchor.constraintEqualToAnchor(margins.leadingAnchor).active = true
         self.horizontalLabel.trailingAnchor.constraintEqualToAnchor(margins.trailingAnchor).active = true
         self.horizontalLabel.bottomAnchor.constraintEqualToAnchor(margins.centerYAnchor).active = true
